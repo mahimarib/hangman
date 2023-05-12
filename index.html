@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>hangman</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <div class="post">
+                    <svg
+                        width="300px"
+                        viewBox="0 0 658 831"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                            id="frame"
+                            d="M26 735.5H113.75M201.5 735.5H113.75M113.75 735.5V238.382M468.5 242.5V94H259.5M113.75 238.382V94H259.5M113.75 238.382L259.5 94"
+                            stroke="currentColor"
+                            stroke-width="19"
+                        />
+                        <circle
+                            class="hidden"
+                            id="head"
+                            cx="470"
+                            cy="319.5"
+                            r="76"
+                            stroke="currentColor"
+                            stroke-width="19"
+                        />
+                        <path
+                            class="hidden"
+                            id="torso"
+                            d="M470 397V565"
+                            stroke="currentColor"
+                            stroke-width="19"
+                        />
+                        <path
+                            class="hidden"
+                            id="left-arm"
+                            d="M470 449L370 513.5"
+                            stroke="currentColor"
+                            stroke-width="19"
+                        />
+                        <path
+                            class="hidden"
+                            id="left-leg"
+                            d="M470 565L370 629.5"
+                            stroke="currentColor"
+                            stroke-width="19"
+                        />
+                        <path
+                            class="hidden"
+                            id="right-arm"
+                            d="M572 513.5L470 449"
+                            stroke="currentColor"
+                            stroke-width="19"
+                        />
+                        <path
+                            class="hidden"
+                            id="right-leg"
+                            d="M572 629.5L470 565"
+                            stroke="currentColor"
+                            stroke-width="19"
+                        />
+                    </svg>
+                </div>
+                <aside>
+                    <div class="blank">
+                        <span class="letter"></span>
+                        <span class="letter"></span>
+                        <span class="letter"></span>
+                        <span class="letter"></span>
+                        <span class="letter"></span>
+                        <span class="letter"></span>
+                        <span class="letter"></span>
+                    </div>
+                    <div class="keyboard">
+                        <span class="letter">a</span>
+                        <span class="letter">b</span>
+                        <span class="letter">c</span>
+                        <span class="letter">d</span>
+                        <span class="letter">e</span>
+                        <span class="letter">f</span>
+                        <span class="letter">g</span>
+                        <span class="letter">h</span>
+                        <span class="letter">i</span>
+                        <span class="letter">j</span>
+                        <span class="letter">k</span>
+                        <span class="letter">l</span>
+                        <span class="letter">m</span>
+                        <span class="letter">n</span>
+                        <span class="letter">o</span>
+                        <span class="letter">p</span>
+                        <span class="letter">q</span>
+                        <span class="letter">r</span>
+                        <span class="letter">s</span>
+                        <span class="letter">t</span>
+                        <span class="letter">u</span>
+                        <span class="letter">v</span>
+                        <span class="letter">w</span>
+                        <span class="letter">x</span>
+                        <span class="letter">y</span>
+                        <span class="letter">z</span>
+                    </div>
+                    <button id="new-game">New Game</button>
+                </aside>
+            </div>
+        </main>
+        <script type="module" src="index.js"></script>
+    </body>
+</html>
