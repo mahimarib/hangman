@@ -37,7 +37,6 @@ export default function WordBank() {
         word = getRandomWord();
         createBlanks(word.length);
         letterElements = document.querySelectorAll('.word-bank .letter');
-        console.log({ word, letterElements });
     };
 
     this.checkLetter = letter => {
@@ -53,7 +52,6 @@ export default function WordBank() {
             sum = `${sum}${letter.textContent}`;
             return sum;
         }, '');
-        console.log(currentLetters);
         return currentLetters === word;
     };
 
