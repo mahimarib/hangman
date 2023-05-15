@@ -1,4 +1,4 @@
-export default wordList = [
+export const wordList = [
     'aardvark',
     'aardwolf',
     'aaron',

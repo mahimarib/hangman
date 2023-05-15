@@ -17,6 +17,7 @@ body {
 svg path {
     stroke-linecap: round;
     stroke-linejoin: round;
+    transition: 0.5s opacity ease;
 }
 
 .hidden {
@@ -24,10 +25,12 @@ svg path {
 }
 
 main {
+    z-index: 1;
     height: 100%;
     width: 100%;
     display: grid;
     place-items: center;
+    position: relative;
 }
 
 .post {
@@ -36,7 +39,7 @@ main {
     align-items: center;
 }
 
-.container {
+main > .container {
     display: grid;
     grid-template-columns: min-content 500px;
     gap: 1em;
@@ -44,6 +47,7 @@ main {
 }
 
 aside {
+    z-index: 1;
     max-width: 500px;
     width: 100%;
     display: flex;
@@ -51,8 +55,52 @@ aside {
     justify-content: space-between;
 }
 
+.pop-out {
+    z-index: -10;
+    opacity: 0;
+    position: absolute;
+    inset: 0;
+    display: grid;
+    backdrop-filter: blur(3px);
+    place-items: center;
+}
+
+.pop-out button {
+    margin: 0 auto;
+}
+
+.pop-out .container {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    padding: 2.5em 2em;
+    max-width: 450px;
+    -webkit-box-shadow: 3px 4px 55px 1px rgba(0, 0, 0, 0.23);
+    -moz-box-shadow: 3px 4px 55px 1px rgba(0, 0, 0, 0.23);
+    box-shadow: 3px 4px 55px 1px rgba(0, 0, 0, 0.23);
+    transform: translateY(-20px);
+    transition: opacity 0.2s ease, transform 0.5s ease;
+}
+
+.pop-out h1 {
+    margin: 0;
+}
+
+.pop-out p {
+    line-height: 2em;
+}
+
+.pop-out strong {
+    text-transform: uppercase;
+    display: block;
+    letter-spacing: 5px;
+}
+
 .keyboard,
-.blank {
+.word-bank {
     display: grid;
     grid-template-columns: repeat(auto-fit, 30px);
     grid-auto-rows: 35px;
@@ -61,7 +109,6 @@ aside {
 }
 
 .letter {
-    cursor: pointer;
     display: flex;
     justify-content: center;
     padding: 0.5em 1em;
@@ -70,18 +117,46 @@ aside {
     color: #444;
     border: 1px solid currentColor;
     border-radius: 5px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
-#new-game {
+button {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #444;
     background-color: transparent;
-    padding: .5em 1em;
+    padding: 0.5em 1em;
     font-size: 1.2em;
     outline: none;
     border: 1px solid currentColor;
     border-radius: 5px;
+}
+
+.keyboard .letter,
+button {
+    transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+button:hover,
+.keyboard .letter:hover {
+    background-color: #444;
+    color: white;
+    cursor: pointer;
+}
+
+.keyboard .letter.disabled {
+    color: #999;
+}
+
+.keyboard .letter.disabled:hover {
+    background-color: transparent;
+    color: #999;
+    cursor: default;
 }
