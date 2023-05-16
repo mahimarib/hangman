@@ -20,7 +20,8 @@ body {
     background-color: rgb(var(--background));
 }
 
-svg path {
+svg path,
+svg circle {
     stroke-linecap: round;
     stroke-linejoin: round;
     transition: 0.5s opacity ease;
