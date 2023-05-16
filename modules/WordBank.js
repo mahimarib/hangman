@@ -49,7 +49,7 @@ export default function WordBank() {
     this.isRevealed = () => {
         const letterArray = Array.from(letterElements);
         const currentLetters = letterArray.reduce((sum, letter) => {
-            sum = `${sum}${letter.textContent}`;
+            sum += letter.textContent;
             return sum;
         }, '');
         return currentLetters === word;
