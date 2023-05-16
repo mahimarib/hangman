@@ -16,15 +16,14 @@ export default function Hangman() {
     };
 
     this.reset = () => {
-        bodyParts.forEach(part => {
-            document.getElementById(part).classList.add('hidden');
-        });
+        bodyParts.forEach(part =>
+            document.getElementById(part).classList.add('hidden')
+        );
         index = 0;
     };
 
-    this.isDead = () => {
-        return !document
+    this.isDead = () =>
+        !document
             .getElementById(bodyParts[bodyParts.length - 1])
             .classList.contains('hidden');
-    };
 }

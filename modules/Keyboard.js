@@ -19,11 +19,10 @@ export default function Keyboard(wordBank) {
     this.getElement = () => element;
     this.runOnPress = func => (callback = func);
 
-    this.reset = () => {
+    this.reset = () =>
         element
             .querySelectorAll('.letter')
             .forEach(e => e.classList.remove('disabled'));
-    };
 
     element.addEventListener('click', clickEvent);
 }
