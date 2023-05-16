@@ -4,13 +4,19 @@
     box-sizing: border-box;
 }
 
+:root {
+    --background: 235, 221, 238;
+    --color: 44, 54, 94;
+}
+
 body {
     margin: 0;
     padding: 0;
     height: 100vh;
     height: 100svh;
     font-family: 'Inter', sans-serif;
-    color: #444;
+    color: rgba(var(--color), 1);
+    background-color: rgb(var(--background));
 }
 
 svg path {
@@ -62,6 +68,7 @@ aside {
     display: grid;
     backdrop-filter: blur(3px);
     place-items: center;
+    transition: opacity 0.2s ease;
 }
 
 .pop-out button {
@@ -69,19 +76,18 @@ aside {
 }
 
 .pop-out .container {
+    transition: opacity 0.2s ease 0.5s, transform 0.5s ease;
     text-align: center;
-    background-color: white;
+    background-color: rgb(var(--background));
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     gap: 1em;
     padding: 2.5em 2em;
-    max-width: 450px;
-    -webkit-box-shadow: 3px 4px 55px 1px rgba(0, 0, 0, 0.23);
-    -moz-box-shadow: 3px 4px 55px 1px rgba(0, 0, 0, 0.23);
-    box-shadow: 3px 4px 55px 1px rgba(0, 0, 0, 0.23);
+    -webkit-box-shadow: 3px 4px 55px 1px rgba(var(--color), 0.23);
+    -moz-box-shadow: 3px 4px 55px 1px rgba(var(--color), 0.23);
+    box-shadow: 3px 4px 55px 1px rgba(var(--color), 0.23);
     transform: translateY(-20px);
-    transition: opacity 0.2s ease, transform 0.5s ease;
     opacity: 0;
 }
 
@@ -91,7 +97,8 @@ aside {
 }
 
 .pop-out.appear .container {
-    transform: 'translateY(0)';
+    transition: opacity 0.2s ease, transform 0.5s ease;
+    transform: translateY(0px);
     opacity: 1;
 }
 
@@ -124,7 +131,7 @@ aside {
     padding: 0.5em 1em;
     text-transform: uppercase;
     font-weight: 700;
-    color: #444;
+    color: rgba(var(--color), 0.8);
     border: 1px solid currentColor;
     border-radius: 5px;
     -webkit-touch-callout: none;
@@ -140,8 +147,8 @@ button {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #444;
-    background-color: transparent;
+    color: rgba(var(--color), 0.8);
+    background-color: rgb(var(--background));
     padding: 0.5em 1em;
     font-size: 1.2em;
     outline: none;
@@ -156,17 +163,17 @@ button {
 
 button:hover,
 .keyboard .letter:hover {
-    background-color: #444;
-    color: white;
+    background-color: rgba(var(--color), 0.8);
+    color: rgba(var(--background), 1);
     cursor: pointer;
 }
 
 .keyboard .letter.disabled {
-    color: #999;
+    color: rgba(var(--color), 0.2);
 }
 
 .keyboard .letter.disabled:hover {
-    background-color: transparent;
-    color: #999;
+    background-color: rgb(var(--background));
+    color: rgba(var(--color), 0.2);
     cursor: default;
 }

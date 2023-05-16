@@ -10,10 +10,10 @@ export default function Game() {
     const hangman = new Hangman();
 
     this.start = () => {
-        wordBank.setOnLoss(hangman.revealNext);
+        wordBank.whenNoLetter(hangman.revealNext);
         wordBank.start();
-        keyboard.setCallback(onKeyPress);
-        popUp.setResetHook(reset);
+        keyboard.runOnPress(onKeyPress);
+        popUp.onReset(reset);
     };
 
     const checkStatus = () => {

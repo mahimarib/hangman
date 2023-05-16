@@ -14,11 +14,10 @@ export default function Keyboard(wordBank) {
             keyPress(event.target.id);
             callback && callback();
         }
-        event.preventDefault();
     };
 
     this.getElement = () => element;
-    this.setCallback = func => (callback = func);
+    this.runOnPress = func => (callback = func);
 
     this.reset = () => {
         element

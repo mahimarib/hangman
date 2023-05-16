@@ -1,12 +1,13 @@
 export default function PopUp() {
     const element = document.querySelector('.pop-out');
+    const container = element.querySelector('.container');
     const title = document.querySelector('.pop-out h1');
     const p = document.querySelector('.pop-out p');
     const button = document.querySelector('.pop-out button');
 
     let resetHook;
 
-    this.setResetHook = func => (resetHook = func);
+    this.onReset = func => (resetHook = func);
 
     this.setWin = word => {
         title.textContent = 'You Win!';

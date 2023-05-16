@@ -3,7 +3,7 @@ import { filteredWords } from '../index.js';
 export default function WordBank() {
     let word;
     let letterElements;
-    let onLoss;
+    let onNoLetter;
 
     const element = document.querySelector('.word-bank');
 
@@ -31,7 +31,7 @@ export default function WordBank() {
 
     this.getElement = () => element;
     this.getWord = () => word;
-    this.setOnLoss = func => (onLoss = func);
+    this.whenNoLetter = func => (onNoLetter = func);
 
     this.start = () => {
         word = getRandomWord();
@@ -43,7 +43,7 @@ export default function WordBank() {
         const indices = getIndicesOf(letter);
         indices.forEach(i => placeLetter(letter, i));
         // if theres no letter and onLoss is defined run func
-        if (!indices.length && onLoss) onLoss();
+        if (!indices.length && onNoLetter) onNoLetter();
     };
 
     this.isRevealed = () => {
