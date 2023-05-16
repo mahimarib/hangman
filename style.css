@@ -2,6 +2,7 @@
 *::before,
 *::after {
     box-sizing: border-box;
+    /* outline: 1px dotted magenta; */
 }
 
 :root {
@@ -76,13 +77,15 @@ aside {
 }
 
 .pop-out .container {
+    min-width: min(calc(100% - 2em), 275px);
     transition: opacity 0.2s ease 0.5s, transform 0.5s ease;
     text-align: center;
     background-color: rgb(var(--background));
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    justify-content: space-evenly;
+    gap: 1.75em;
     padding: 2.5em 2em;
     -webkit-box-shadow: 3px 4px 55px 1px rgba(var(--color), 0.23);
     -moz-box-shadow: 3px 4px 55px 1px rgba(var(--color), 0.23);
@@ -107,13 +110,17 @@ aside {
 }
 
 .pop-out p {
+    margin: 0;
     line-height: 2em;
+    display: flex;
+    flex-direction: column;
 }
 
 .pop-out strong {
     text-transform: uppercase;
-    display: block;
+    font-size: 1.2em;
     letter-spacing: 5px;
+    padding-left: 5px;
 }
 
 .keyboard,

@@ -17,13 +17,13 @@ export default function PopUp() {
 
     this.setWin = word => {
         title.textContent = 'You Win!';
-        p.innerHTML = `You have successfully guessed: <strong>${word}</strong>`;
+        p.innerHTML = `You have successfully guessed:<strong>${word}</strong>`;
         button.textContent = 'play again';
     };
 
     this.setLoss = word => {
         title.textContent = 'You Lose.';
-        p.innerHTML = `The word was: <strong>${word}</strong>`;
+        p.innerHTML = `The word was:<strong>${word}</strong>`;
         button.textContent = 'try again';
     };
 
