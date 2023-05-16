@@ -7,6 +7,12 @@ export default function PopUp() {
 
     let resetHook;
 
+    const reset = () => {
+        title.textContent = '';
+        p.innerHTML = '';
+        button.textContent = '';
+    };
+
     this.onReset = func => (resetHook = func);
 
     this.setWin = word => {
@@ -21,15 +27,12 @@ export default function PopUp() {
         button.textContent = 'try again';
     };
 
-    this.appear = () => {
-        element.classList.add('appear');
-    };
+    this.appear = () => element.classList.add('appear');
 
-    this.hide = () => {
-        element.classList.remove('appear');
-    };
+    this.hide = () => element.classList.remove('appear');
 
     button.addEventListener('click', () => {
+        reset();
         resetHook && resetHook();
     });
 }
