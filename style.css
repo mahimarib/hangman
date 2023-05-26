@@ -69,6 +69,7 @@ aside {
     position: absolute;
     inset: 0;
     display: grid;
+    -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
     place-items: center;
     transition: opacity 0.2s ease;
